@@ -34,8 +34,7 @@ This OS uses a custom file system. Here is what they do:
 
 --- DOWNLOAD ---
 * [Download Lithos Base OS](https://github.com/fastkash2012/MicaOs/releases/download/base/MicaOs.-.Lithos.stable.zip)
-
-
+* [Download IronCore v29 update file](https://github.com/fastkash2012/MicaOs/releases/download/update29/Mica-OS-IronCore-v29.mupdate)
 
 --- FEEDBACK & UPDATES ---
 MicaOs is still actively being developed! If you find bugs or missing features, reach out to me:
