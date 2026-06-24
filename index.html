@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mica Os (stable)</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+<div id="lock-screen">
+    <div class="ls-box" id="ls-login" style="display:none;">
+        <h2 style="margin:0 0 5px 0" id="ls-welcome">Welcome</h2>
+        <p style="margin:0 0 20px 0; opacity:0.6; font-size:12px;">Firmware: v28.3 • Creative Mode</p>
+        <input type="password" id="ls-pin" placeholder="Enter PIN" style="width:100%; text-align:center; font-size:20px; letter-spacing:5px; margin-bottom:15px;" onkeydown="if(event.key==='Enter') unlockOS()">
+        <button class="primary-btn" style="width:100%; margin-bottom:10px;" onclick="unlockOS()">Unlock</button>
+        <button style="width:100%; background:transparent; border:none; font-size:11px;" onclick="document.getElementById('os-restore').click()">Restore Profile / Install App</button>
+        <input type="file" id="os-restore" hidden accept=".mica,.mapp,.mpkg" onchange="restoreOrInstall(event)">
+        <button style="width:100%; background:transparent; border:none; font-size:11px; margin-top:10px; color:#ff5f56;" onclick="logout()">Switch User</button>
+    </div>
+    <div class="ls-box" id="ls-setup" style="display:none;">
+        <h2 style="margin:0 0 5px 0">Setup Mica OS</h2>
+        <input type="text" id="setup-user" placeholder="Create Username" style="width:100%; margin-bottom:10px;">
+        <input type="password" id="setup-pin" placeholder="Create a PIN" style="width:100%; margin-bottom:15px;" onkeydown="if(event.key==='Enter') setupOS()">
+        
+        <!-- ✨ NEW: Profile upload directly during initial setup -->
+        <div style="margin:15px 0; padding:12px; background:var(--well-bg); border-radius:var(--rad-md); text-align:center; font-size:11px;">
+            <p style="margin:0 0 8px 0; opacity:0.7;">Already have a .mica backup?<br>Restore your entire creative workspace now</p>
+            <button onclick="document.getElementById('setup-profile').click()" style="width:100%; background:transparent; border:1px dashed var(--dock-border); padding:12px; border-radius:var(--rad-md); font-size:13px; color:var(--text);">📤 Upload .mica Profile (Optional)</button>
+            <input type="file" id="setup-profile" hidden accept=".mica" onchange="restoreOrInstall(event)">
+        </div>
+        
+        <button class="primary-btn" style="width:100%; margin-bottom:10px;" onclick="setupOS()">Initialize System</button>
+    </div>
+</div>
+
+<div id="toast-container"></div>
+<div id="desktop" onclick="closeMenus()"></div>
+
+<div id="vertical-bubble" onmousedown="dragBubble(event)">
+    <div class="bubble-btn" title="Quick Access" onclick="toggleQuickAccess()">⚡</div>
+    <div class="bubble-btn" title="Settings" onclick="App.open('Amber Settings')">⚙️</div>
+    <div class="bubble-btn" title="Clear Memory" style="color:#ff5f56;" onclick="App.perfMode()">🧹</div>
+</div>
+
+<div id="quick-access">
+    <h4 style="margin-top:0; border-bottom:1px solid var(--dock-border); padding-bottom:10px;">Quick Controls</h4>
+    <div class="qa-item"><span>🔊 Volume</span> <input type="range" min="0" max="100" value="80"></div>
+    <div class="qa-item"><span>☀️ Brightness</span> <input type="range" min="0" max="100" value="100"></div>
+    <div class="qa-item"><span>📶 Wi-Fi</span> <b>Connected</b></div>
+    <button class="primary-btn" style="width:100%; margin-top:10px;" onclick="App.open('Amber Settings'); toggleQuickAccess();">All Settings</button>
+</div>
+
+<div id="taskbar">
+    <div class="tb-start-btn" onclick="toggleMenu(event)">❖ Start</div>
+    <div id="tb-apps"></div>
+    <div class="tb-sys"><span id="tb-clock">00:00</span></div>
+</div>
+
+<div id="start-menu">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--dock-border); padding-bottom:10px;">
+        <div><h3 style="margin:0;">Mica Apps</h3></div>
+        <button onclick="document.getElementById('os-install-app').click()" style="padding:5px 10px; font-size:11px; background:var(--text); color:var(--win-bg); border-radius:4px;">+ Install App</button>
+        <input type="file" id="os-install-app" hidden accept=".mapp" onchange="restoreOrInstall(event)">
+    </div>
+    <div class="sm-grid" id="sm-app-list"></div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
