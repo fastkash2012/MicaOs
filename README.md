@@ -32,6 +32,10 @@ This OS uses a custom file system. Here is what they do:
 * .webm  = Videos (It accepts standard .mp4 files; just rename the file extension to .webm)
 * .mupdate = for firmware updates and update packs
 
+--- DOWNLOAD ---
+* sha256:9f5d8f9f3f3feb1414ef0f8b249af3bf163e6ff9b34f84d042b42ddda7ed31e6
+
+
 --- FEEDBACK & UPDATES ---
 MicaOs is still actively being developed! If you find bugs or missing features, reach out to me:
 * Scratch: https://scratch.mit.edu/users/fastkash/
