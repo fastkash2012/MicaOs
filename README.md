@@ -33,7 +33,7 @@ This OS uses a custom file system. Here is what they do:
 * .mupdate = for firmware updates and update packs
 
 --- DOWNLOAD ---
-* [Download Lithos Base OS](sha256:9f5d8f9f3f3feb1414ef0f8b249af3bf163e6ff9b34f84d042b42ddda7ed31e6)
+* [Download Lithos Base OS](https://github.com/fastkash2012/MicaOs/releases/download/base/MicaOs.-.Lithos.stable.zip)
 
 
 
