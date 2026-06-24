@@ -41,4 +41,13 @@ MicaOs is still actively being developed! If you find bugs or missing features, 
 * Scratch: https://scratch.mit.edu/users/fastkash/
 * Email: officialsteamdrive@gmail.com
 * itch.io: https://fastkash2012.itch.io/micaos
-* web preview: https://mica-os.netlify.app/ 
+* web preview: https://mica-os.netlify.app/
+
+
+---SCREENSHOTS---
+<img width="960" height="540" alt="ironcore1" src="https://github.com/user-attachments/assets/02c7aadc-7b3e-4c29-bfcd-fc5cb967a2a7" />
+<img width="960" height="540" alt="ironcore3" src="https://github.com/user-attachments/assets/b5826488-6090-4f58-84b5-e7849d845af7" />
+<img width="960" height="540" alt="ironcore2" src="https://github.com/user-attachments/assets/13c72cab-3891-4aa8-8591-530bb19a8fc6" />
+<img width="960" height="540" alt="ironcore4" src="https://github.com/user-attachments/assets/3f5fda12-e6aa-4249-b169-f2a7c5b5aeff" />
+
+
